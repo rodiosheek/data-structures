@@ -1,0 +1,32 @@
+{
+  "name": "es-6-data-structure",
+  "version": "0.0.1",
+  "description": "Description of data structures using EcmaScript 2015",
+  "main": "index.js",
+  "scripts": {
+    "run": "gulp"
+  },
+  "keywords": [
+    "es6",
+    "data",
+    "data",
+    "stuctures"
+  ],
+  "author": "perry_the_platypus",
+  "license": "Beerware",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.13",
+    "browserify": "latest",
+    "gulp": "latest",
+    "gulp-babel": "^7.0.0",
+    "vinyl-source-stream": "latest",
+    "watchify": "latest"
+  }
+}
