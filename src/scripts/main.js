@@ -1,19 +1,31 @@
 import {_l} from '../lib/_utl.js';
 import {LinkedList} from '../lib/data-structure/linked-list/Linked_List.js';
+import {Stack} from '../lib/data-structure/stack/Stack.js';
+
+var stack = new Stack();
+
+var data = [1,2,3,4,5,6,7];
+
+data.map(el=>stack.push(el));
 
 
-var list = new LinkedList(),
-    data = [1,2,3,4];
-data.map(el=>list.append(el));
 
-_l(list);
-var last = list.lastItem();
+_l(stack.pop());
+_l(stack.pop());
 
-_l(last);
-_l(last instanceof LinkedList);
+_l(stack.pip());
 
-_l(list.toArray());
+let test1 = {
+    a: 2,
+    test: function () {
+        return `Test a = ${this.a}`;
+    }
+};
 
-_l([1,2,3,4].join('') == list.toArray().join(''))
-_l([1,2,3,4] === list.toArray())
+stack.push(test1);
 
+
+stack.push('string');
+
+_l(stack.pip());
+_l(stack);
