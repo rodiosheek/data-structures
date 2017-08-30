@@ -25,13 +25,32 @@ gulp.task('browser', function () {
        .pipe(gulp.dest('./dist'))
 });
 
+gulp.task('specs', function () {
+    return browserify({
+        entries: './e2e/src/index.js',
+        extensions: ['*[sS]pec.js'],
+        debug: true
+    })
+        .transform(babelify.configure({
+            plugins: [
+                "transform-es2015-modules-commonjs",
+                "transform-decorators-legacy"
+            ],
+            sourceMapsAbsolute: true
+        }))
+        .bundle()
+        .pipe(source('indexSpec.js'))
+        .pipe(gulp.dest('./e2e/specs'))
+});
 
-gulp.task('watch', ['browser'], ()=>{
+
+gulp.task('watch', ['browser', 'specs'], ()=>{
     browserSync.init({
         server: "./"
     });
 
     gulp.watch("./src/**/**.js", ['browser']);
+    gulp.watch("./e2e/src/*.js", ['specs']);
     gulp.watch("*.html").on('change', browserSync.reload);
     gulp.watch("dist/**/*.js").on('change', browserSync.reload);
 });

@@ -4,7 +4,8 @@
   "description": "Description of data structures using EcmaScript 2015",
   "main": "index.js",
   "scripts": {
-    "run": "gulp"
+    "run": "gulp",
+    "test" : "mocha e2e/specs/**/*[sS]pec.js"
   },
   "keywords": [
     "es6",
@@ -26,6 +27,7 @@
     "browserify": "latest",
     "gulp": "latest",
     "gulp-babel": "^7.0.0",
+    "mocha": "^3.5.0",
     "vinyl-source-stream": "latest",
     "watchify": "latest"
   }
