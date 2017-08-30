@@ -1,32 +1,19 @@
 import {_l} from '../lib/_utl.js';
-import {LinkedList} from '../lib/data-structure/Linked_List.js';
+import {LinkedList} from '../lib/data-structure/linked-list/Linked_List.js';
 
-var list = new LinkedList();
 
-_l(`clean list`, list);
-
-var data = [1,2,3,4,5,6,7,8,9,'last'];
-
+var list = new LinkedList(),
+    data = [1,2,3,4];
 data.map(el=>list.append(el));
 
-_l('append', list);
+_l(list);
+var last = list.lastItem();
 
-list.prepend(0);
+_l(last);
+_l(last instanceof LinkedList);
 
-_l('prepend', list);
+_l(list.toArray());
 
-_l('->>del', list.deleteByVal(5));
+_l([1,2,3,4].join('') == list.toArray().join(''))
+_l([1,2,3,4] === list.toArray())
 
-_l('delete', list);
-
-_l('count', list.length(), list);
-
-_l('if 3', list.contains(2));
-
-_l('last', list.lastItem())
-
-list.clean(true);
-_l('clean', list);
-
-var arr = list.toArray();
-_l('toArray', arr);

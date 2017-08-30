@@ -1,4 +1,5 @@
-import {_l} from '../_utl.js';
+import {_l} from '../../_utl.js';
+
 export class LinkedList {
     append(data) {
         if(!this._exist(this.head)) {
@@ -47,6 +48,7 @@ export class LinkedList {
     length(){
         let count = 0,
             current = this.head;
+        if(current == null) return count;
         while(this._exist(current)) {
             count++;
             current = current.next;
@@ -72,7 +74,7 @@ export class LinkedList {
     }
 
     /**
-     * If type of item not equal undefined
+     * If type of item not equal to undefined
      * @param item
      * @returns {boolean}
      * @private
@@ -82,7 +84,7 @@ export class LinkedList {
     }
 }
 
-class ListItem {
+export class ListItem {
     constructor(data) {
         this.data = data;
     }
