@@ -1,4 +1,4 @@
-import {_l} from '../_utl.js';
+import {_l} from '../../_utl.js';
 
 export class LinkedList {
     append(data) {

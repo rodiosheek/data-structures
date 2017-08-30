@@ -1,4 +1,4 @@
-import {LinkedList, ListItem} from '../../src/lib/data-structure/Linked_List.js';
+import {LinkedList, ListItem} from '../../src/lib/data-structure/linked-list/Linked_List.js';
 
 var assert = require('assert');
 

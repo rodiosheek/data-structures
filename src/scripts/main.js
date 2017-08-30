@@ -1,5 +1,5 @@
 import {_l} from '../lib/_utl.js';
-import {LinkedList} from '../lib/data-structure/Linked_List.js';
+import {LinkedList} from '../lib/data-structure/linked-list/Linked_List.js';
 
 
 var list = new LinkedList(),
