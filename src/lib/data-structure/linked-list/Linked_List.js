@@ -68,7 +68,7 @@ export class LinkedList {
 
     /**
      * Clear out list
-     * @param confirm {boolean} Protection against deletion (true is you sure)
+     * @param confirm {boolean} Protection against deletion (true if you sure)
      */
     clean(confirm = false) {
         if(!confirm) return;

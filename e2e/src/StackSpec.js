@@ -1,4 +1,4 @@
-import {Stack} from '../../src/lib/data-structure/stack/Stack.js';
+import {Stack, StackItem} from '../../src/lib/data-structure/stack/Stack.js';
 
 var assert = require('assert');
 
@@ -39,7 +39,7 @@ function push() {
 
     describe('Stack push method.', () => {
         it('Added element to Stack',() => {
-            assert.equal('end', stack.pop());
+            assert.equal('end', stack.pop().data);
         })
     });
 
@@ -56,7 +56,7 @@ function pop() {
 
     describe('Stack pop method.', () => {
         it('Return last element',() => {
-            assert.equal('end', lastPop);
+            assert.equal(true, lastPop instanceof StackItem);
         })
     });
 
