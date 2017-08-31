@@ -15,3 +15,6 @@ StackSpec.run('init');
 StackSpec.run('push');
 StackSpec.run('pop');
 StackSpec.run('pip');
+StackSpec.run('length');
+StackSpec.run('isEmpty');
+StackSpec.run('clean');
