@@ -1,6 +1,14 @@
 import {_l} from '../../_utl.js';
 
+
+/**
+ * Linked list data structure
+ */
 export class LinkedList {
+    /**
+     * Added element fo end of list.
+     * @param data {Any} Element data
+     */
     append(data) {
         if(!this._exist(this.head)) {
             this.head = new ListItem(data);
@@ -12,11 +20,21 @@ export class LinkedList {
         }
         current.next = new ListItem(data);
     }
+    /**
+     * Added element fo start of list.
+     * @param data {Any} Element data
+     */
     prepend(data) {
         let newFirst = new ListItem(data);
         newFirst.next = this.head;
         this.head = newFirst;
     }
+
+    /**
+     * Delete list element by exist value
+     * @param value {Any} Element value
+     * @returns {boolean} True if deleted False if not
+     */
     deleteByVal(value) {
         if(!this._exist(this.head)) return;
         //For first item (head)
@@ -33,6 +51,12 @@ export class LinkedList {
         }
         return false;
     }
+
+    /**
+     * If value contains in list
+     * @param value {Any} Element value
+     * @returns {boolean} True if contains False if not
+     */
     contains(value) {
         let current = this.head;
         while(this._exist(current)){
@@ -41,10 +65,20 @@ export class LinkedList {
         }
         return false;
     }
+
+    /**
+     * Clear out list
+     * @param confirm {boolean} Protection against deletion (true is you sure)
+     */
     clean(confirm = false) {
         if(!confirm) return;
         this.head = null;
     }
+
+    /**
+     * Return count of list elements
+     * @returns {number} Count
+     */
     length(){
         let count = 0,
             current = this.head;
@@ -55,6 +89,11 @@ export class LinkedList {
         }
         return count;
     }
+
+    /**
+     * Return last list element
+     * @returns {null|ListItem|*} Instance of ListItem
+     */
     lastItem() {
         let current = this.head;
         while(this._exist(current.next)) {
@@ -62,6 +101,11 @@ export class LinkedList {
         }
         return current;
     }
+
+    /**
+     * Return array representation of list
+     * @returns {Array}
+     */
     toArray() {
         let res = [],
             current = this.head;
@@ -84,6 +128,10 @@ export class LinkedList {
     }
 }
 
+/**
+ * ListItem
+ * Element of LinkedList
+ */
 export class ListItem {
     constructor(data) {
         this.data = data;
