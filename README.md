@@ -4,4 +4,4 @@
 
 
 
-##### *- Run unit tests in command line with command - ```npm test```*
+ *- Run unit tests in command line with command - ```npm test```*
