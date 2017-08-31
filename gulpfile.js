@@ -49,7 +49,7 @@ gulp.task('watch', ['browser', 'specs'], ()=>{
         server: "./"
     });
 
-    gulp.watch("./src/**/**.js", ['browser']);
+    gulp.watch("./src/**/**.js", ['browser', 'specs']);
     gulp.watch("./e2e/src/*.js", ['specs']);
     gulp.watch("*.html").on('change', browserSync.reload);
     gulp.watch("dist/**/*.js").on('change', browserSync.reload);

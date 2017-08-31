@@ -1,19 +1,17 @@
 import {_l} from '../lib/_utl.js';
 import {LinkedList} from '../lib/data-structure/linked-list/Linked_List.js';
+import {Stack} from '../lib/data-structure/stack/Stack.js';
 
+var stack = new Stack();
 
-var list = new LinkedList(),
-    data = [1,2,3,4];
-data.map(el=>list.append(el));
+_l(stack.isEmpty());
 
-_l(list);
-var last = list.lastItem();
+var data = [1,2,3,4,5,6,7];
 
-_l(last);
-_l(last instanceof LinkedList);
+data.map(el=>stack.push(el));
 
-_l(list.toArray());
+_l(stack.pop());
+_l(stack.length());
 
-_l([1,2,3,4].join('') == list.toArray().join(''))
-_l([1,2,3,4] === list.toArray())
-
+stack.clean(true);
+_l(stack);
