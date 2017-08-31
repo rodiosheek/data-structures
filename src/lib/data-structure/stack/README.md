@@ -1,8 +1,8 @@
 [Data structure](https://github.com/rodiosheek/data-structures/tree/Unit_test_linked_list)->
-[Stack](https://github.com/rodiosheek/data-structures/blob/master/src/lib/data-structure/Linked_List.js)
+[Stack](https://github.com/rodiosheek/data-structures/tree/Stack/src/lib/data-structure/stack)
 
 ### Stack
-![Stack]()
+![Stack](https://github.com/rodiosheek/data-structures/blob/Stack/src/lib/data-structure/stack/Stack.jpg)
 
 #### Init stack
 ```
