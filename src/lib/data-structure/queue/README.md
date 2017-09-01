@@ -1,7 +1,7 @@
 [Data structure](https://github.com/rodiosheek/data-structures)->Queue
 
 ### Queue
-![Queue]()
+![Queue](https://github.com/rodiosheek/data-structures/blob/master/src/lib/data-structure/queue/queue.png)
 
 #### Init Queue
 ```
