@@ -1,2 +1,4 @@
 .idea/
 node_modules/
+e2e/specs/
+dist/
