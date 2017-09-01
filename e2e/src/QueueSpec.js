@@ -38,7 +38,7 @@ function store() {
 
     describe('Queue store method', () => {
         it('Add element to end of Queue', () => {
-            assert.equal('first', queue.queue[5]);
+            assert.equal('first', queue.access());
         });
     });
 
@@ -53,16 +53,14 @@ function access() {
 
     let lastElement = queue.access();
 
-    let elementExist = queue.queue.find(
-        el=>el == lastElement
-    );
+    let length = queue.length();
 
     describe('Queue access method', () => {
         it('Return element value from end of Queue', () => {
             assert.equal('first', lastElement);
         });
         it('Remove element from end of Queue', () => {
-            assert.equal(undefined, elementExist);
+            assert.equal(data.length - 1, length);
         });
     });
 
@@ -77,16 +75,14 @@ function peek() {
 
     let lastElement = queue.peek();
 
-    let elementExist = queue.queue.find(
-        el=>el == lastElement
-    );
+    let length = queue.length();
 
     describe('Queue peek method', () => {
         it('Return element value from end of Queue', () => {
             assert.equal('first', lastElement);
         });
         it("Don't remove element from end of Queue", () => {
-            assert.equal('first', elementExist);
+            assert.equal(data.length, length);
         });
     });
 
