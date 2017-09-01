@@ -323,9 +323,13 @@ var _Stack = require('../lib/data-structure/stack/Stack.js');
 
 var _Queue = require('../lib/data-structure/queue/Queue.js');
 
-var queue = new _Queue.Queue(),
-    data = [1, 2, 3, 4, 5];
-queue.store(1);
-(0, _utl._l)(queue.isEmpty());
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvZXMtNi1kYXRhLXN0cnVjdHVyZS9zcmMvc2NyaXB0cy9tYWluLmpzIl0sIm5hbWVzIjpbInF1ZXVlIiwiZGF0YSIsInN0b3JlIiwiaXNFbXB0eSJdLCJtYXBwaW5ncyI6Ijs7QUFBQTs7QUFDQTs7QUFDQTs7QUFDQTs7QUFFQSxJQUFJQSxRQUFRLGtCQUFaO0FBQUEsSUFDSUMsT0FBTyxDQUFDLENBQUQsRUFBRyxDQUFILEVBQUssQ0FBTCxFQUFPLENBQVAsRUFBUyxDQUFULENBRFg7QUFFQUQsTUFBTUUsS0FBTixDQUFZLENBQVo7QUFDQSxhQUFHRixNQUFNRyxPQUFOLEVBQUgiLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7X2x9IGZyb20gJy4uL2xpYi9fdXRsLmpzJztcbmltcG9ydCB7TGlua2VkTGlzdH0gZnJvbSAnLi4vbGliL2RhdGEtc3RydWN0dXJlL2xpbmtlZC1saXN0L0xpbmtlZF9MaXN0LmpzJztcbmltcG9ydCB7U3RhY2t9IGZyb20gJy4uL2xpYi9kYXRhLXN0cnVjdHVyZS9zdGFjay9TdGFjay5qcyc7XG5pbXBvcnQge1F1ZXVlfSBmcm9tICcuLi9saWIvZGF0YS1zdHJ1Y3R1cmUvcXVldWUvUXVldWUuanMnO1xuXG52YXIgcXVldWUgPSBuZXcgUXVldWUoKSxcbiAgICBkYXRhID0gWzEsMiwzLDQsNV07XG5xdWV1ZS5zdG9yZSgxKTtcbl9sKHF1ZXVlLmlzRW1wdHkoKSk7XG5cbiJdfQ==
+let queue = new _Queue.Queue(),
+    data = ['first', 2, 3, 4, 5, 'last'];
+
+data.map(el => queue.store(el));
+
+data.map(() => queue.access());
+(0, _utl._l)(queue.access());
+(0, _utl._l)(queue);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi92YXIvd3d3L2h0bWwvZXMtNi1kYXRhLXN0cnVjdHVyZS9zcmMvc2NyaXB0cy9tYWluLmpzIl0sIm5hbWVzIjpbInF1ZXVlIiwiZGF0YSIsIm1hcCIsImVsIiwic3RvcmUiLCJhY2Nlc3MiXSwibWFwcGluZ3MiOiI7O0FBQUE7O0FBQ0E7O0FBQ0E7O0FBQ0E7O0FBRUEsSUFBSUEsUUFBUSxrQkFBWjtBQUFBLElBQ0lDLE9BQU8sQ0FBQyxPQUFELEVBQVUsQ0FBVixFQUFhLENBQWIsRUFBZ0IsQ0FBaEIsRUFBbUIsQ0FBbkIsRUFBc0IsTUFBdEIsQ0FEWDs7QUFHQUEsS0FBS0MsR0FBTCxDQUFTQyxNQUFJSCxNQUFNSSxLQUFOLENBQVlELEVBQVosQ0FBYjs7QUFFQUYsS0FBS0MsR0FBTCxDQUFTLE1BQUlGLE1BQU1LLE1BQU4sRUFBYjtBQUNBLGFBQUdMLE1BQU1LLE1BQU4sRUFBSDtBQUNBLGFBQUdMLEtBQUgiLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7X2x9IGZyb20gJy4uL2xpYi9fdXRsLmpzJztcbmltcG9ydCB7TGlua2VkTGlzdH0gZnJvbSAnLi4vbGliL2RhdGEtc3RydWN0dXJlL2xpbmtlZC1saXN0L0xpbmtlZF9MaXN0LmpzJztcbmltcG9ydCB7U3RhY2t9IGZyb20gJy4uL2xpYi9kYXRhLXN0cnVjdHVyZS9zdGFjay9TdGFjay5qcyc7XG5pbXBvcnQge1F1ZXVlfSBmcm9tICcuLi9saWIvZGF0YS1zdHJ1Y3R1cmUvcXVldWUvUXVldWUuanMnO1xuXG5sZXQgcXVldWUgPSBuZXcgUXVldWUoKSxcbiAgICBkYXRhID0gWydmaXJzdCcsIDIsIDMsIDQsIDUsICdsYXN0J107XG5cbmRhdGEubWFwKGVsPT5xdWV1ZS5zdG9yZShlbCkpO1xuXG5kYXRhLm1hcCgoKT0+cXVldWUuYWNjZXNzKCkpO1xuX2wocXVldWUuYWNjZXNzKCkpO1xuX2wocXVldWUpO1xuXG4iXX0=
 },{"../lib/_utl.js":1,"../lib/data-structure/linked-list/Linked_List.js":2,"../lib/data-structure/queue/Queue.js":3,"../lib/data-structure/stack/Stack.js":4}]},{},[5])
