@@ -1,17 +1,14 @@
 import {_l} from '../lib/_utl.js';
 import {LinkedList} from '../lib/data-structure/linked-list/Linked_List.js';
 import {Stack} from '../lib/data-structure/stack/Stack.js';
+import {Queue} from '../lib/data-structure/queue/Queue.js';
 
-var stack = new Stack();
+let queue = new Queue(),
+    data = ['first', 2, 3, 4, 5, 'last'];
 
-_l(stack.isEmpty());
+data.map(el=>queue.store(el));
 
-var data = [1,2,3,4,5,6,7];
+data.map(()=>queue.access());
+_l(queue.access());
+_l(queue);
 
-data.map(el=>stack.push(el));
-
-_l(stack.pop());
-_l(stack.length());
-
-stack.clean(true);
-_l(stack);
