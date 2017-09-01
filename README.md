@@ -6,4 +6,5 @@
 
 
  - Run unit tests in command line with command - ```npm test```
+ - To build works scripts run command - ```gulp watch```
  - TODO: run JSDoc not global (now ```jsdoc ./lib/data-structure/**/*.js``` because jsdoc install global)
