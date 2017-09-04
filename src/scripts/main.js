@@ -4,34 +4,18 @@ import {Stack} from '../lib/data-structure/stack/Stack.js';
 import {Queue} from '../lib/data-structure/queue/Queue.js';
 import {Set} from '../lib/data-structure/set/Set.js';
 
-var set1 = new Set();
-var set2 = new Set();
-var set3 = new Set();
-var set4 = new Set();
+let set_1 = new Set(),
+    set_2 = new Set(),
+    data_1 = [1, 2, 3, 4, 5],
+    data_2 = [4, 5];
 
-var obj = {name: 'name'};
+data_1.map(el=>set_1.add(el));
+data_2.map(el=>set_2.add(el));
 
-var data1 = [1,2,3,4,5,6, obj];
-var data2 = [4,5,6,7,8,9];
-var data3 = [4,5, obj];
+let subset = set_1.subset(set_2);
 
-data1.map(el=>set1.add(el));
-data2.map(el=>set2.add(el));
-data3.map(el=>set3.add(el));
+_l(subset);
 
-var union  = set1.union(set2);
-var intersection  = set1.intersection(set2);
-var difference  = set1.difference(set2);
-var subset = set1.subset(set3);
-
-_l('union', union);
-_l('intersection', intersection);
-_l('difference', difference);
-_l('union size', union.size());
-_l('subset', subset);
-_l('isEmpty', set4.isEmpty());
-_l('clean set3', set3.clean(true));
-_l(' set3', set3);
 
 
 
