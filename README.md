@@ -2,6 +2,7 @@
 ### 1) [Linked List](https://github.com/rodiosheek/data-structures/tree/master/src/lib/data-structure/linked-list)
 ### 2) [Stack](https://github.com/rodiosheek/data-structures/tree/master/src/lib/data-structure/stack)
 ### 3) [Queue](https://github.com/rodiosheek/data-structures/tree/master/src/lib/data-structure/queue)
+### 4) [Set](https://github.com/rodiosheek/data-structures/tree/master/src/lib/data-structure/set)
 
 
 
