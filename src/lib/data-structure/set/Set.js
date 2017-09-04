@@ -1,8 +1,9 @@
 import {_l} from '../../_utl.js';
 
+
 export class Set {
     constructor() {
-        this.store = [];
+        this._store = [];
     }
 
     /**
@@ -11,6 +12,8 @@ export class Set {
      * @returns {boolean} true if added, otherwise false
      */
     add(element) {
+        if(this.has(element)) return false;
+        this._store.push(element);
         return true;
     }
 
@@ -20,16 +23,15 @@ export class Set {
      * @returns {*} element from Set
      */
     remove(element) {
-        return element;
-    }
-
-    /**
-     * Check if element exist in Set
-     * @param element
-     * @returns {boolean} true if element exist, otherwise false
-     */
-    has(element) {
-        return true;
+        if (!this.has(element)) return false;
+        return this._store.find(
+            (el, index, arr) => {
+                if (el === element) {
+                    arr.splice(index, 1);
+                    return true;
+                }
+            }
+        );
     }
 
     /**
@@ -38,7 +40,11 @@ export class Set {
      * @returns {Set}
      */
     union(set) {
-        return new Set();
+        let union = new Set();
+        let secondSet = set.toArray();
+        this._store.forEach(e=>union.add(e));
+        secondSet.forEach(e=>union.add(e));
+        return union;
     }
 
     /**
@@ -47,7 +53,13 @@ export class Set {
      * @returns {Set}
      */
     intersection(set) {
-        return new Set();
+        let intersection = new Set();
+        this._store.map(el=>{
+            if(set.has(el)) {
+                intersection.add(el);
+            }
+        });
+        return intersection;
     }
 
     /**
@@ -56,7 +68,13 @@ export class Set {
      * @returns {Set}
      */
     difference(set) {
-        return new Set();
+        let difference = new Set();
+        this._store.map(el=>{
+            if(!set.has(el)) {
+                difference.add(el);
+            }
+        });
+        return difference;
     }
 
     /**
@@ -65,15 +83,34 @@ export class Set {
      * @returns {boolean}
      */
     subset(set) {
-        return true;
+        let union = this.union(set);
+        let intersection = this.intersection(set);
+        return (union.size() === this.size() && intersection.size() === set.size());
+    }
+
+    /**
+     * Check if element exist in Set
+     * @param element
+     * @returns {boolean} true if element exist, otherwise false
+     */
+    has(element) {
+        return (~this._store.indexOf(element)) ? true : false;
     }
 
     /**
      * Return count of Set elements
-     * @returns {float}
+     * @returns {int}
      */
     size() {
+        return this._store.length;
+    }
 
+    /**
+     * Return Set elements like array
+     * @returns {Array}
+     */
+    toArray() {
+        return this._store;
     }
 
     /**
@@ -81,7 +118,7 @@ export class Set {
      * @returns {boolean}
      */
     isEmpty() {
-        return true;
+        return this.size() === 0;
     }
 
     /**
@@ -89,6 +126,10 @@ export class Set {
      * @param confirm {boolean} Protection against deletion (true if you sure)
      */
     clean(confirm = false) {
-
+        if(confirm) {
+            this._store = [];
+            return true;
+        }
+        return false;
     }
 }
