@@ -1,6 +1,7 @@
 import {LinkedListSpec} from './LinkedListSpec.js';
 import {StackSpec} from './StackSpec.js';
 import {QueueSpec} from './QueueSpec.js';
+import {SetSpec} from './SetSpec.js';
 
 LinkedListSpec.run('init');
 LinkedListSpec.run('append');
@@ -26,3 +27,16 @@ QueueSpec.run('access');
 QueueSpec.run('peek');
 QueueSpec.run('isEmpty');
 QueueSpec.run('length');
+
+SetSpec.run('init');
+SetSpec.run('add');
+SetSpec.run('remove');
+SetSpec.run('union');
+SetSpec.run('intersection');
+SetSpec.run('difference');
+SetSpec.run('subset');
+SetSpec.run('has');
+SetSpec.run('size');
+SetSpec.run('toArray');
+SetSpec.run('isEmpty');
+SetSpec.run('clean');
