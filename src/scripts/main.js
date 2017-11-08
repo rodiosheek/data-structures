@@ -5,25 +5,47 @@ import {Queue} from '../lib/data-structure/queue/Queue.js';
 import {Set} from '../lib/data-structure/set/Set.js';
 import {AAMap} from '../lib/data-structure/Map/AAMap.js';
 
-let aaMap = new AAMap();
+Array.prototype.shuffle = function (b) {
+    var i = this.length, j, t;
+    while (i) {
+        j = Math.floor(( i-- ) * Math.random());
 
-aaMap.set('rodion', {name: 'rodion'})
-aaMap.set('one', 'one');
-aaMap.set('two', 'two');
+        t = (b && typeof this[i].shuffle !== 'undefined')
+            ? this[i].shuffle()
+            : this[i];
 
-_l('old', aaMap.get('one'));
+        this[i] = this[j];
+        this[j] = t;
+    }
+    return this;
+};
 
-aaMap.change('one', 'three');
+Array.prototype.randomAdd = function (end) {
+    let start = 0;
+    while (start < end) {
+        this.push(start++);
+    }
+};
 
-let newVal = aaMap.get('one');
+function quickSort(arr) {
+    //Recursive base
+    if (arr.length < 2) return arr;
+    //Recursive case
+    let index = Math.round((arr.length - 1) / 2),
+        pivot = arr[index],
+        less = [],
+        greater = [];
+    arr.map(el=> {
+        if(el < pivot) less.push(el);
+        if(el > pivot) greater.push(el);
+    });
+    return quickSort(less).concat(pivot, quickSort(greater));
+}
 
-_l('new',newVal);
 
-let newNew = aaMap.change('one', 'four', 'four');
 
-_l(aaMap.get('one'));
 
-_l(aaMap);
+
 
 
 
